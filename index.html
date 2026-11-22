@@ -40,13 +40,32 @@
 .album-lightbox .prev{left:10px;top:50%;transform:translateY(-50%)}
 .album-lightbox .next{right:10px;top:50%;transform:translateY(-50%)}
 .album-lightbox .counter{position:absolute;bottom:21px;left:0;right:0;text-align:center;color:#f7e9e9;font-size:.85rem}
-</style></head><body><main>
+
+/* Interactive invitation enhancements */
+.envelope-intro{position:fixed;z-index:3000;inset:0;background:radial-gradient(circle at 50% 35%,#bb4b50,#6f1823 78%);display:flex;align-items:center;justify-content:center;padding:20px;transition:opacity .6s ease,visibility .6s ease}
+.envelope-intro.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+.envelope-card{width:min(100%,360px);min-height:430px;border:1px solid #e5bcaf;border-radius:180px 180px 18px 18px;background:#fff9f5;text-align:center;padding:75px 22px 35px;box-shadow:0 18px 50px #2706095e}
+.envelope-card .intro-names{font-family:'Great Vibes',cursive;color:var(--red);font-size:clamp(2.5rem,9vw,3.5rem);line-height:1.2;margin:20px 0}
+.envelope-card .intro-date{letter-spacing:.14em;color:#7d393c;font-size:.86rem}
+.intro-open{background:var(--red);color:white;border:none;padding:13px 27px;border-radius:999px;font:600 .9rem 'Be Vietnam Pro',sans-serif;cursor:pointer;margin-top:22px;box-shadow:0 7px 20px #90272a3a}
+.intro-open:focus-visible,.quick-actions button:focus-visible,.invite-actions button:focus-visible{outline:3px solid #e9aa75;outline-offset:3px}
+.invite-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.invite-actions button{font:600 .82rem 'Be Vietnam Pro',sans-serif;cursor:pointer;background:white;border:1px solid var(--red);color:var(--red);padding:11px 17px;border-radius:26px}
+.invite-actions button:hover{background:var(--red);color:white}
+.quick-actions{position:fixed;z-index:150;right:14px;bottom:17px;display:flex;flex-direction:column;gap:9px}
+.quick-actions button{border:0;border-radius:50%;width:44px;height:44px;font-size:19px;background:var(--red);color:white;box-shadow:0 3px 12px #43131845;cursor:pointer}
+#backTop{display:none}
+#shareToast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:3010;background:#342528;color:white;padding:10px 17px;border-radius:25px;font-size:.8rem;text-align:center;min-width:190px;max-width:90%;display:none}
+.reveal-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal-ready .reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal-ready .reveal{opacity:1;transform:none;transition:none}.envelope-intro{transition:none}}
+</style></head><body><div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="envelope-card"><p class="eyebrow red">Trân trọng kính mời</p><div class="divider">♥</div><h2 class="intro-names" id="introTitle">Thanh Tòng<br>♥<br>Thu An</h2><p class="intro-date">27 · 12 · 2026</p><button type="button" class="intro-open" id="openInvitation">💌 Mở thiệp cưới</button></div></div><main>
 <section class="hero"><p class="eyebrow">The Wedding Of</p><h1 class="script">Thanh Tòng</h1><div class="script and">♥</div><h1 class="script">Thu An</h1><div class="divider">❦</div><p>Trân trọng kính mời bạn đến chung vui</p><p class="date">27 · 12 · 2026</p><p class="small">Cuộn xuống để xem thiệp ↓</p></section>
 <section><p class="eyebrow red">Lễ Tân Hôn</p><div class="divider">♥</div><div class="parents"><div><p>Ông – Bà</p><strong>NGUYỄN VĂN SƠN<br>VÕ THỊ LỆ</strong><p>242 Ấp Thạnh Phong,<br>Xã Thạnh Hưng, An Giang</p></div><div><p>Ông – Bà</p><strong>PHAN VĂN TO<br>NGUYỄN THỊ HƯỜNG</strong><p>409 Ấp Phước Lộc,<br>Xã Thạnh Phú, Cần Thơ</p></div></div><p class="serif" style="margin-top:40px">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI</p><h2 class="script names red">Nguyễn Thanh Tòng</h2><p>TRƯỞNG NAM</p><div class="heart">♡</div><h2 class="script names red">Phan Thị Thu An</h2><p>ÚT NỮ</p><div class="photo cover-photo" data-photo="cover"><div class="placeholder">Ảnh cưới của Thanh Tòng & Thu An<br><small>Thêm đường dẫn ảnh vào phần cấu hình</small></div></div></section>
 <section class="red-panel"><div class="invitation"><p class="script invitation-names">Thanh Tòng <span aria-hidden="true">♥</span> Thu An</p><p>Trân trọng kính mời</p><h3 class="serif" style="font-size:1.6rem;margin:0">Quý Gia Đình</h3><p>Đến dự buổi tiệc chung vui cùng gia đình chúng tôi tại</p><h2 class="script">Tư Gia</h2><p>242 Ấp Thạnh Phong, Xã Thạnh Hưng,<br>Tỉnh An Giang</p><p class="eyebrow red">Chủ nhật</p><div class="date-large serif">27 / 12 / 2026</div><p><strong>Vào lúc 08:00</strong></p><p class="small">(Nhằm ngày 19 tháng 11 năm Bính Ngọ)</p><div class="divider">♥</div><p class="script" style="font-size:2.2rem;line-height:1.3">Sự hiện diện của Quý Gia Đình<br>là niềm vinh hạnh của chúng tôi!</p><p><strong>Chủ hôn: Nguyễn Văn Sơn</strong></p><p class="script" style="font-size:2rem">Kính mời!</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=242+Ap+Thanh+Phong+Xa+Thanh+Hung+An+Giang" target="_blank" rel="noopener">📍 Xem đường đi</a></div></section>
-<section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p></section>
+<section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p><div class="invite-actions"><button id="saveDate" type="button">📅 Lưu ngày cưới</button><button id="shareInvite" type="button">💌 Chia sẻ thiệp</button></div></section>
 <section style="background:#f8f0ed"><p class="eyebrow red">Our Memories</p><h2 class="script names red">Album ảnh cưới</h2><p>Những khoảnh khắc đáng nhớ của chúng mình</p><div class="gallery" id="gallery"><div class="photo" data-photo="gallery1"><div class="placeholder">Ảnh cưới 1</div></div><div class="photo" data-photo="gallery2"><div class="placeholder">Ảnh cưới 2</div></div><div class="photo" data-photo="gallery3"><div class="placeholder">Ảnh cưới 3</div></div><div class="photo" data-photo="gallery4"><div class="placeholder">Ảnh cưới 4</div></div><div class="photo" data-photo="gallery5"><div class="placeholder">Ảnh cưới 5</div></div></div></section>
-<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main>
+<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="quick-actions"><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
 // Ảnh Google Drive cần đặt quyền "Bất kỳ ai có đường liên kết - Người xem".
@@ -85,5 +104,44 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
  document.addEventListener('keydown',e=>{if(!viewer.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});
  viewer.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});
  viewer.addEventListener('touchend',e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>55)show(current+(dx<0?1:-1));startX=null},{passive:true});
+})();
+
+/* Welcome overlay, sharing, save-the-date and gentle mobile animations */
+(()=>{
+ const intro=document.getElementById('envelopeIntro');
+ const opening=document.getElementById('openInvitation');
+ const toast=document.getElementById('shareToast');
+ let toastTimer;
+ function notify(message){toast.textContent=message;toast.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.style.display='none',3100)}
+ const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(!sessionStorage.getItem('wedding-invitation-opened'))document.body.style.overflow='hidden';
+ else intro.remove();
+ opening?.addEventListener('click',()=>{intro.classList.add('dismissed');document.body.style.overflow='';sessionStorage.setItem('wedding-invitation-opened','yes');setTimeout(()=>intro.remove(),700)});
+ const inviteUrl='https://thanhtong99.github.io/wedding-online/';
+ async function share(){
+  try{
+   if(navigator.share){await navigator.share({title:'Thiệp cưới Thanh Tòng ♥ Thu An',text:'Trân trọng kính mời bạn đến chung vui ngày 27/12/2026!',url:inviteUrl});return}
+   if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(inviteUrl);notify('Đã sao chép đường dẫn thiệp cưới');return}
+   const input=document.createElement('textarea');input.value=inviteUrl;input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();const ok=document.execCommand('copy');input.remove();notify(ok?'Đã sao chép đường dẫn thiệp cưới':'Vui lòng sao chép đường dẫn trên thanh địa chỉ');
+  }catch(err){if(err.name!=='AbortError')notify('Không thể chia sẻ; hãy sao chép đường dẫn trang')}
+ }
+ document.getElementById('shareInvite').addEventListener('click',share);
+ document.getElementById('quickShare').addEventListener('click',share);
+ document.getElementById('saveDate').addEventListener('click',()=>{
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Thanh Tong Thu An//Wedding//VI','BEGIN:VEVENT','UID:wedding-20261227-thanhtong-thuan@invitation','DTSTAMP:20261122T000000Z','DTSTART;TZID=Asia/Ho_Chi_Minh:20261227T080000','DTEND;TZID=Asia/Ho_Chi_Minh:20261227T100000','SUMMARY:Le tan hon Thanh Tong va Thu An','LOCATION:242 Ap Thanh Phong\\, Xa Thanh Hung\\, An Giang','DESCRIPTION:Tran trong kinh moi den chung vui cung gia dinh','END:VEVENT','END:VCALENDAR'];
+  const url=URL.createObjectURL(new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'}));
+  const a=document.createElement('a');a.href=url;a.download='le-tan-hon-thanh-tong-thu-an.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Đã tạo lịch cưới để thêm vào điện thoại');
+ });
+ const back=document.getElementById('backTop');
+ function onScroll(){back.style.display=window.scrollY>550?'block':'none'}
+ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+ back.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+ if('IntersectionObserver' in window&&!reduceMotion){
+  const targets=[...document.querySelectorAll('main section:not(.hero)')];
+  targets.forEach(el=>el.classList.add('reveal'));
+  const ob=new IntersectionObserver((entries)=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');ob.unobserve(entry.target)}}),{threshold:0.07});
+  document.documentElement.classList.add('reveal-ready');
+  targets.forEach(el=>ob.observe(el));
+ }
 })();
 </script></body></html>
