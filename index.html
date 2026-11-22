@@ -111,20 +111,47 @@
 .album-book-intro{font-size:.87rem;color:#876869;max-width:320px;margin:24px auto 6px}
 .album-book-open{background:var(--red);color:#fff;border:none;border-radius:999px;padding:15px 30px;font:700 .9rem 'Be Vietnam Pro',sans-serif;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px #92282b35}
 .album-book-open:focus-visible,.album-book-header button:focus-visible{outline:3px solid #e8b3a2;outline-offset:3px}
-.album-book-overlay{position:fixed;inset:0;z-index:2800;background:#fff9f4;display:none;flex-direction:column}
-.album-book-overlay.open{display:flex}
-.album-book-header{min-height:82px;flex:0 0 auto;padding:12px max(18px,env(safe-area-inset-right)) 12px max(18px,env(safe-area-inset-left));background:#86252b;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 3px 15px #2e0c123d}
-.album-book-header small{font-size:.58rem;letter-spacing:.18em;opacity:.8}
-.album-book-header h2{font:400 clamp(1.85rem,7vw,2.5rem) 'Great Vibes',cursive;line-height:1.1;margin:2px 0}
-.album-book-header button{border:1px solid #fff9;color:#fff;background:#ffffff19;border-radius:50%;min-width:43px;height:43px;font-size:30px;cursor:pointer}
-.album-book-scroll{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;flex:1;padding:10px 12px max(24px,env(safe-area-inset-bottom));scroll-behavior:smooth;text-align:center}
-.album-book-lead{color:#8b5960;font-size:.8rem;margin:16px 0 19px}
-.book-spread{max-width:950px;margin:0 auto 22px;background:#fff;padding:6px 6px 0;box-shadow:0 7px 25px #73252618;border:1px solid #eedfda;border-radius:5px}
-.book-spread img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#fff;aspect-ratio:6890/4823}
-.book-spread:first-of-type img{aspect-ratio:6201/4134}
-.book-spread figcaption{font-size:.7rem;color:#8b6768;padding:6px}
-.album-book-finish{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--red);margin:22px auto 40px}
-@media(max-width:440px){.album-book-header{min-height:72px}.book-spread{margin-bottom:14px;padding:3px 3px 0}.album-book-scroll{padding-left:5px;padding-right:5px}}
+
+/* Full-screen wedding photo book: never crop the source album spreads. */
+.album-book-overlay{position:fixed;inset:0;z-index:2800;background:#170e12;display:none;color:#fff}
+.album-book-overlay.open{display:block}
+.book-fullscreen{height:100%;height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}
+.book-viewer-top{position:relative;z-index:3;min-height:63px;padding:calc(9px + env(safe-area-inset-top)) 13px 9px 20px;background:linear-gradient(#200e17ee,#200e1766);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.book-viewer-title{font:400 clamp(1.8rem,6vw,2.5rem) 'Great Vibes',cursive;white-space:nowrap;line-height:1.1}
+.book-close,.book-nav{display:grid;place-items:center;border:1px solid #fff5;background:#ffffff24;color:white;border-radius:50%;width:43px;height:43px;flex:0 0 43px;font-size:29px;cursor:pointer;touch-action:manipulation}
+.book-close:focus-visible,.book-nav:focus-visible{outline:3px solid #ffc7b2;outline-offset:2px}
+.book-viewer-stage{position:relative;overflow:hidden;min-height:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;display:grid;place-items:center;background:radial-gradient(ellipse at center,#442329 0%,#170e12 75%)}
+.book-page-track{height:100%;width:100%;display:grid;place-items:center;position:relative;overflow:hidden}
+.book-page-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;user-select:none;-webkit-user-drag:none;will-change:transform,opacity}
+.book-viewer-bottom{min-height:94px;padding:10px 16px calc(11px + env(safe-area-inset-bottom));background:linear-gradient(#200e1766,#200e17ee);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.book-status{text-align:center;min-width:0;flex:1;font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem}
+.book-status small{display:block;font-size:.66rem;line-height:1.4;color:#f3d7d7;margin-top:8px}
+.book-progress{height:3px;max-width:210px;margin:8px auto 0;background:#ffffff35;border-radius:8px;overflow:hidden}
+.book-progress span{display:block;height:100%;width:9.1%;background:#f4baba;border-radius:8px;transition:width .35s ease}
+.book-image-error{position:absolute;inset:0;display:grid;place-items:center;padding:30px;text-align:center;font-size:.89rem;color:#f6d2d2;pointer-events:none}
+.book-image-error[hidden]{display:none}
+.book-transition-slide-in-next{animation:bookInNext .56s cubic-bezier(.2,.8,.2,1) both}
+.book-transition-slide-out-next{animation:bookOutNext .56s ease both}
+.book-transition-slide-in-prev{animation:bookInPrev .56s cubic-bezier(.2,.8,.2,1) both}
+.book-transition-slide-out-prev{animation:bookOutPrev .56s ease both}
+.book-transition-fade-in{animation:bookFadeIn .56s ease both}
+.book-transition-fade-out{animation:bookFadeOut .56s ease both}
+.book-transition-zoom-in{animation:bookZoomIn .56s cubic-bezier(.2,.8,.2,1) both}
+.book-transition-zoom-out{animation:bookZoomOut .56s ease both}
+.book-transition-flip-in{animation:bookFlipIn .56s ease both}
+.book-transition-flip-out{animation:bookFlipOut .56s ease both}
+@keyframes bookInNext{from{opacity:.35;transform:translateX(95%)}to{opacity:1;transform:translateX(0)}}
+@keyframes bookOutNext{from{opacity:1;transform:translateX(0)}to{opacity:.3;transform:translateX(-80%)}}
+@keyframes bookInPrev{from{opacity:.35;transform:translateX(-95%)}to{opacity:1;transform:translateX(0)}}
+@keyframes bookOutPrev{from{opacity:1;transform:translateX(0)}to{opacity:.3;transform:translateX(80%)}}
+@keyframes bookFadeIn{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}
+@keyframes bookFadeOut{from{opacity:1}to{opacity:0}}
+@keyframes bookZoomIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@keyframes bookZoomOut{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.13)}}
+@keyframes bookFlipIn{from{opacity:0;transform:perspective(900px) rotateY(-18deg) scale(.92)}to{opacity:1;transform:perspective(900px) rotateY(0) scale(1)}}
+@keyframes bookFlipOut{from{opacity:1;transform:perspective(900px) rotateY(0)}to{opacity:0;transform:perspective(900px) rotateY(18deg) scale(.92)}}
+@media(max-width:440px){.book-viewer-top{min-height:58px}.book-viewer-bottom{min-height:84px;padding-left:12px;padding-right:12px}.book-nav{width:40px;height:40px;flex-basis:40px}}
+@media(prefers-reduced-motion:reduce){.book-page-image{animation:none!important}.book-progress span{transition:none}}
 </style></head><body><div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="envelope-card"><p class="eyebrow red">Trân trọng kính mời</p><div class="divider">♥</div><h2 class="intro-names" id="introTitle">Thanh Tòng<br>♥<br>Thu An</h2><p class="intro-date">27 · 12 · 2026</p><button type="button" class="intro-open" id="openInvitation">💌 Mở thiệp cưới</button></div></div><main>
 <section class="hero"><p class="eyebrow">The Wedding Of</p><h1 class="script">Thanh Tòng</h1><div class="script and">♥</div><h1 class="script">Thu An</h1><div class="divider">❦</div><p>Trân trọng kính mời bạn đến chung vui</p><p class="date">27 · 12 · 2026</p><p class="small">Cuộn xuống để xem thiệp ↓</p></section>
 <section><p class="eyebrow red">Lễ Tân Hôn</p><div class="divider">♥</div><div class="parents"><div><p>Ông – Bà</p><strong>NGUYỄN VĂN SƠN<br>VÕ THỊ LỆ</strong><p>242 Ấp Thạnh Phong,<br>Xã Thạnh Hưng, An Giang</p></div><div><p>Ông – Bà</p><strong>PHAN VĂN TO<br>NGUYỄN THỊ HƯỜNG</strong><p>409 Ấp Phước Lộc,<br>Xã Thạnh Phú, Cần Thơ</p></div></div><p class="serif" style="margin-top:40px">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI</p><h2 class="script names red">Nguyễn Thanh Tòng</h2><p>TRƯỞNG NAM</p><div class="heart">♡</div><h2 class="script names red">Phan Thị Thu An</h2><p>ÚT NỮ</p><div class="photo cover-photo" data-photo="cover"><div class="placeholder">Ảnh cưới của Thanh Tòng & Thu An<br><small>Thêm đường dẫn ảnh vào phần cấu hình</small></div></div></section>
@@ -147,22 +174,23 @@
   </div>
 </section>
 <footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="album-book-overlay" id="albumBook" role="dialog" aria-modal="true" aria-labelledby="albumBookTitle" aria-hidden="true">
- <header class="album-book-header"><div><small>THE WEDDING ALBUM</small><h2 id="albumBookTitle">Thanh Tòng ♥ Thu An</h2></div><button id="closeAlbumBook" type="button" aria-label="Đóng album">×</button></header>
- <div class="album-book-scroll" id="albumBookScroll">
-  <p class="album-book-lead">Cuộn xuống để ngắm những khoảnh khắc của chúng mình ♡</p>
-  <figure class="book-spread"><img data-book-src="images/album-book/bia.webp" alt="Bìa album cưới" loading="lazy" decoding="async"><figcaption>Bìa album</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_001.webp" alt="Trang album cưới 1" loading="lazy" decoding="async"><figcaption>Trang 1 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_002.webp" alt="Trang album cưới 2" loading="lazy" decoding="async"><figcaption>Trang 2 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_003.webp" alt="Trang album cưới 3" loading="lazy" decoding="async"><figcaption>Trang 3 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_004.webp" alt="Trang album cưới 4" loading="lazy" decoding="async"><figcaption>Trang 4 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_005.webp" alt="Trang album cưới 5" loading="lazy" decoding="async"><figcaption>Trang 5 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_006.webp" alt="Trang album cưới 6" loading="lazy" decoding="async"><figcaption>Trang 6 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_007.webp" alt="Trang album cưới 7" loading="lazy" decoding="async"><figcaption>Trang 7 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_008.webp" alt="Trang album cưới 8" loading="lazy" decoding="async"><figcaption>Trang 8 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_009.webp" alt="Trang album cưới 9" loading="lazy" decoding="async"><figcaption>Trang 9 / 10</figcaption></figure>
-  <figure class="book-spread"><img data-book-src="images/album-book/spread_010.webp" alt="Trang album cưới 10" loading="lazy" decoding="async"><figcaption>Trang 10 / 10</figcaption></figure>
-  <p class="album-book-finish">Cảm ơn bạn đã cùng chúng mình lưu giữ những kỷ niệm này ♥</p>
- </div>
+  <div class="book-fullscreen">
+    <header class="book-viewer-top">
+      <span class="book-viewer-title" id="albumBookTitle">Thanh Tòng ♥ Thu An</span>
+      <button type="button" class="book-close" id="closeAlbumBook" aria-label="Đóng cuốn album">×</button>
+    </header>
+    <div class="book-viewer-stage" id="albumBookStage" aria-label="Album ảnh cưới, vuốt sang trái hoặc phải để chuyển trang">
+      <div class="book-page-track" id="albumBookTrack">
+        <img id="albumBookImage" class="book-page-image" src="" alt="Bìa album cưới" draggable="false">
+      </div>
+      <div id="bookImageError" class="book-image-error" role="status" hidden>Ảnh này chưa được tải lên GitHub.</div>
+    </div>
+    <footer class="book-viewer-bottom">
+      <button type="button" id="albumBookPrev" class="book-nav" aria-label="Trang trước">‹</button>
+      <div class="book-status"><span id="bookPageCount" aria-live="polite">1 / 11</span><div class="book-progress"><span id="bookProgressFill"></span></div><small id="bookSwipeHint">Vuốt sang trái để chuyển trang</small></div>
+      <button type="button" id="albumBookNext" class="book-nav" aria-label="Trang tiếp theo">›</button>
+    </footer>
+  </div>
 </div><div class="petals-layer" id="petalsLayer" aria-hidden="true"></div><div class="quick-actions"><button id="musicToggle" type="button" aria-label="Bật nhạc cưới" aria-pressed="false" title="Bật nhạc cưới">♫</button><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
@@ -358,29 +386,124 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
 })();
 
 
-/* Photo-book viewer: images are fetched only when the visitor opens the book. */
+/* Full-screen album with horizontal swipes, alternating transitions and auto-exit after last page. */
 (()=>{
- const overlay=document.getElementById('albumBook'),open=document.getElementById('openAlbumBook'),close=document.getElementById('closeAlbumBook'),scroll=document.getElementById('albumBookScroll');
- let previousFocus=null,previousOverflow='';
+ const overlay=document.getElementById('albumBook');
+ const openButton=document.getElementById('openAlbumBook');
+ const closeButton=document.getElementById('closeAlbumBook');
+ const stage=document.getElementById('albumBookStage');
+ const track=document.getElementById('albumBookTrack');
+ const previousButton=document.getElementById('albumBookPrev');
+ const nextButton=document.getElementById('albumBookNext');
+ const count=document.getElementById('bookPageCount');
+ const progress=document.getElementById('bookProgressFill');
+ const hint=document.getElementById('bookSwipeHint');
+ const error=document.getElementById('bookImageError');
+ const pages=['bia.webp',...Array.from({length:10},(_,i)=>'spread_'+String(i+1).padStart(3,'0')+'.webp')].map(name=>'images/album-book/'+name);
+ const effects=['slide','fade','zoom','flip'];
+ const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let pageIndex=0,transitioning=false,startX=0,startY=0,tracking=false,previousOverflow='',previousFocus=null;
+ const active=()=>track.querySelector('.book-page-image:last-child');
+ function urlFor(index){return pages[index]}
+ function preload(index){
+  if(index<0||index>=pages.length)return;
+  const image=new Image();image.src=urlFor(index);
+ }
+ function updateStatus(){
+  count.textContent=(pageIndex+1)+' / '+pages.length;
+  progress.style.width=((pageIndex+1)/pages.length*100)+'%';
+  hint.textContent=pageIndex===pages.length-1?'Đã đến trang cuối · Vuốt tiếp để trở về thiệp':'Vuốt trái hoặc phải để chuyển trang';
+  previousButton.disabled=pageIndex===0;
+  previousButton.style.opacity=pageIndex===0?'.35':'1';
+ }
+ function attachImageHandlers(img,index){
+  const handle=()=>{if(index===pageIndex)error.hidden=img.naturalWidth>0};
+  img.addEventListener('load',handle,{once:true});
+  img.addEventListener('error',()=>{if(index===pageIndex)error.hidden=false},{once:true});
+ }
  function openBook(){
-  previousFocus=document.activeElement;previousOverflow=document.body.style.overflow;
+  if(overlay.classList.contains('open'))return;
+  previousFocus=document.activeElement;
+  previousOverflow=document.body.style.overflow;
+  document.body.style.overflow='hidden';
+  pageIndex=0;transitioning=false;
+  track.innerHTML='';
+  const img=document.createElement('img');
+  img.className='book-page-image';img.alt='Bìa album cưới';img.draggable=false;
+  attachImageHandlers(img,0);img.src=urlFor(0);track.append(img);
+  error.hidden=true;updateStatus();
   overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';scroll.scrollTop=0;
-  overlay.querySelectorAll('img[data-book-src]').forEach(img=>{if(!img.src)img.src=img.dataset.bookSrc});
-  close.focus();
+  closeButton.focus({preventScroll:true});
+  preload(1);
  }
  function closeBook(){
+  if(!overlay.classList.contains('open'))return;
   overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
   document.body.style.overflow=previousOverflow;
-  if(previousFocus?.focus)previousFocus.focus();
+  track.querySelectorAll('.book-page-image').forEach((img,i)=>{if(i>0)img.remove()});
+  transitioning=false;tracking=false;
+  if(previousFocus&&previousFocus.focus)previousFocus.focus({preventScroll:true});
  }
- open.addEventListener('click',openBook);
- close.addEventListener('click',closeBook);
- overlay.addEventListener('keydown',event=>{
-  if(event.key==='Escape'){event.preventDefault();closeBook()}
-  if(event.key==='Tab'){
-   const focusable=[close];
-   if(event.shiftKey||document.activeElement===close){event.preventDefault();close.focus()}
+ function turn(direction){
+  if(!overlay.classList.contains('open')||transitioning)return;
+  const target=pageIndex+direction;
+  if(target<0)return;
+  if(target>=pages.length){closeBook();return}
+  const old=active();
+  const next=document.createElement('img');
+  next.className='book-page-image';next.draggable=false;
+  next.alt=target===0?'Bìa album cưới':'Trang album cưới '+target+' trên '+(pages.length-1);
+  next.style.zIndex='2';
+  const oldIndex=pageIndex;
+  pageIndex=target;error.hidden=true;
+  attachImageHandlers(next,target);
+  next.src=urlFor(target);
+  track.append(next);updateStatus();
+  preload(target+1);
+  preload(target-1);
+  if(reduceMotion){
+   old.remove();next.style.zIndex='';return;
+  }
+  transitioning=true;
+  const kind=effects[(Math.max(oldIndex,target)-1+effects.length)%effects.length];
+  const variant=(kind==='slide'?'slide':kind);
+  old.classList.add('book-transition-'+variant+'-out'+(variant==='slide'?(direction>0?'-next':'-prev'):''));
+  next.classList.add('book-transition-'+variant+'-in'+(variant==='slide'?(direction>0?'-next':'-prev'):''));
+  let done=false;
+  function finish(){if(done)return;done=true;old.remove();next.className='book-page-image';next.style.zIndex='';transitioning=false}
+  next.addEventListener('animationend',finish,{once:true});
+  setTimeout(finish,680);
+ }
+ openButton.addEventListener('click',openBook);
+ closeButton.addEventListener('click',closeBook);
+ previousButton.addEventListener('click',()=>turn(-1));
+ nextButton.addEventListener('click',()=>turn(1));
+ stage.addEventListener('touchstart',e=>{
+  if(e.touches.length!==1){tracking=false;return}
+  startX=e.touches[0].clientX;startY=e.touches[0].clientY;tracking=true;
+ },{passive:true});
+ stage.addEventListener('touchend',e=>{
+  if(!tracking)return;tracking=false;
+  const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.1)turn(dx<0?1:-1);
+ },{passive:true});
+ stage.addEventListener('touchcancel',()=>tracking=false,{passive:true});
+ // Desktop dragging also turns pages; touch is handled only by the touch events above.
+ stage.addEventListener('mousedown',e=>{if(e.button!==0)return;startX=e.clientX;startY=e.clientY;tracking=true});
+ window.addEventListener('mouseup',e=>{
+  if(!tracking||e.detail===0||!overlay.classList.contains('open'))return;
+  tracking=false;const dx=e.clientX-startX,dy=e.clientY-startY;
+  if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy))turn(dx<0?1:-1);
+ });
+ overlay.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();closeBook()}
+  else if(e.key==='ArrowLeft'){e.preventDefault();turn(-1)}
+  else if(e.key==='ArrowRight'){e.preventDefault();turn(1)}
+  else if(e.key==='Tab'){
+   const focusables=[closeButton,previousButton,nextButton].filter(el=>!el.disabled);
+   const first=focusables[0],last=focusables[focusables.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
   }
  });
 })();
