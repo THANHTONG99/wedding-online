@@ -37,7 +37,14 @@
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
 // Ảnh Google Drive cần đặt quyền "Bất kỳ ai có đường liên kết - Người xem".
-const PHOTOS={cover:"images/anh-cuoi.webp",gallery1:"",gallery2:"",gallery3:"",gallery4:"",gallery5:""};
+const PHOTOS={
+  cover:"images/anh-cuoi.webp",
+  gallery1:"images/album1.jpg",
+  gallery2:"images/album2.jpg",
+  gallery3:"images/album3.jpg",
+  gallery4:"images/album4.jpg",
+  gallery5:"images/album5.jpg"
+};
 function photoUrl(value){if(!value)return "";const match=value.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]+)/);return match?"https://drive.google.com/thumbnail?id="+match[1]+"&sz=w1600":value}
 document.querySelectorAll("[data-photo]").forEach(el=>{const src=photoUrl(PHOTOS[el.dataset.photo]);if(src){const img=document.createElement("img");img.src=src;img.alt="Ảnh cưới Thanh Tòng và Thu An";img.loading="lazy";img.onerror=()=>{img.remove()};el.prepend(img);const ph=el.querySelector(".placeholder");if(ph)ph.remove()}});
 function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now();const s=Math.max(0,Math.floor(t/1000));const values=[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60];["days","hours","minutes","seconds"].forEach((id,i)=>document.getElementById(id).textContent=String(values[i]).padStart(2,"0"))}tick();setInterval(tick,1000);
