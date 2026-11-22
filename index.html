@@ -59,13 +59,31 @@
 .reveal-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal-ready .reveal.visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal-ready .reveal{opacity:1;transform:none;transition:none}.envelope-intro{transition:none}}
+
+/* Wedding music, falling petals, and December 2026 calendar */
+.quick-actions #musicToggle{display:grid;place-items:center;background:#fff9f5;color:var(--red);border:1px solid #b95b5b;font-size:18px}
+.quick-actions #musicToggle.is-playing{background:var(--red);color:white;box-shadow:0 0 0 4px #9c2a3022}
+.petals-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:140}
+.petal{position:absolute;top:-60px;width:15px;height:19px;opacity:.55;border-radius:75% 10% 70% 15%;background:linear-gradient(130deg,#f6b6bf,#a73c54);animation:petal-fall var(--duration,12s) linear infinite;animation-delay:var(--delay,0s);left:var(--left,50%);transform-origin:center;filter:blur(.15px)}
+.petal:nth-child(3n){background:linear-gradient(130deg,#fff0e6,#d67d8a);width:11px;height:16px}
+@keyframes petal-fall{0%{transform:translate3d(0,-45px,0) rotate(0deg)}50%{transform:translate3d(var(--drift,45px),52vh,0) rotate(220deg)}100%{transform:translate3d(calc(var(--drift,45px)*-1),110vh,0) rotate(450deg)}}
+.wedding-calendar{max-width:390px;margin:27px auto 14px;padding:22px 15px;background:#fffaf7;border:1px solid #ddb9b1;border-radius:17px;box-shadow:0 8px 25px #7d2d2910}
+.calendar-title{font-family:'Playfair Display',serif;color:var(--red);font-weight:700;font-size:1.3rem;margin:0 0 15px}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.calendar-weekday{font-size:.73rem;color:#8f6c6a;padding:5px 0;font-weight:600}
+.calendar-day{display:grid;place-items:center;aspect-ratio:1/1;min-width:0;font-size:.85rem;border-radius:50%}
+.calendar-day.wedding-day{background:var(--red);color:white;font-weight:700;position:relative;box-shadow:0 3px 12px #92282b38}
+.calendar-day.wedding-day::after{content:"♥";position:absolute;font-size:8px;bottom:0;color:#fff1ee}
+.calendar-note{margin:13px auto 0;font-size:.85rem;color:var(--red);font-weight:600}
+@media(max-width:380px){.wedding-calendar{padding:17px 10px}.calendar-day{font-size:.78rem}.quick-actions{right:10px;bottom:11px}}
+@media(prefers-reduced-motion:reduce){.petals-layer{display:none}.petal{animation:none}}
 </style></head><body><div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="envelope-card"><p class="eyebrow red">Trân trọng kính mời</p><div class="divider">♥</div><h2 class="intro-names" id="introTitle">Thanh Tòng<br>♥<br>Thu An</h2><p class="intro-date">27 · 12 · 2026</p><button type="button" class="intro-open" id="openInvitation">💌 Mở thiệp cưới</button></div></div><main>
 <section class="hero"><p class="eyebrow">The Wedding Of</p><h1 class="script">Thanh Tòng</h1><div class="script and">♥</div><h1 class="script">Thu An</h1><div class="divider">❦</div><p>Trân trọng kính mời bạn đến chung vui</p><p class="date">27 · 12 · 2026</p><p class="small">Cuộn xuống để xem thiệp ↓</p></section>
 <section><p class="eyebrow red">Lễ Tân Hôn</p><div class="divider">♥</div><div class="parents"><div><p>Ông – Bà</p><strong>NGUYỄN VĂN SƠN<br>VÕ THỊ LỆ</strong><p>242 Ấp Thạnh Phong,<br>Xã Thạnh Hưng, An Giang</p></div><div><p>Ông – Bà</p><strong>PHAN VĂN TO<br>NGUYỄN THỊ HƯỜNG</strong><p>409 Ấp Phước Lộc,<br>Xã Thạnh Phú, Cần Thơ</p></div></div><p class="serif" style="margin-top:40px">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI</p><h2 class="script names red">Nguyễn Thanh Tòng</h2><p>TRƯỞNG NAM</p><div class="heart">♡</div><h2 class="script names red">Phan Thị Thu An</h2><p>ÚT NỮ</p><div class="photo cover-photo" data-photo="cover"><div class="placeholder">Ảnh cưới của Thanh Tòng & Thu An<br><small>Thêm đường dẫn ảnh vào phần cấu hình</small></div></div></section>
 <section class="red-panel"><div class="invitation"><p class="script invitation-names">Thanh Tòng <span aria-hidden="true">♥</span> Thu An</p><p>Trân trọng kính mời</p><h3 class="serif" style="font-size:1.6rem;margin:0">Quý Gia Đình</h3><p>Đến dự buổi tiệc chung vui cùng gia đình chúng tôi tại</p><h2 class="script">Tư Gia</h2><p>242 Ấp Thạnh Phong, Xã Thạnh Hưng,<br>Tỉnh An Giang</p><p class="eyebrow red">Chủ nhật</p><div class="date-large serif">27 / 12 / 2026</div><p><strong>Vào lúc 08:00</strong></p><p class="small">(Nhằm ngày 19 tháng 11 năm Bính Ngọ)</p><div class="divider">♥</div><p class="script" style="font-size:2.2rem;line-height:1.3">Sự hiện diện của Quý Gia Đình<br>là niềm vinh hạnh của chúng tôi!</p><p><strong>Chủ hôn: Nguyễn Văn Sơn</strong></p><p class="script" style="font-size:2rem">Kính mời!</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=242+Ap+Thanh+Phong+Xa+Thanh+Hung+An+Giang" target="_blank" rel="noopener">📍 Xem đường đi</a></div></section>
-<section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p><div class="invite-actions"><button id="saveDate" type="button">📅 Lưu ngày cưới</button><button id="shareInvite" type="button">💌 Chia sẻ thiệp</button></div></section>
+<section><p class="eyebrow red">Lịch hẹn yêu thương</p><h2 class="script names red">Ngày mình về chung đôi</h2><div class="wedding-calendar" aria-label="Lịch tháng 12 năm 2026"><p class="calendar-title">Tháng 12 · 2026</p><div class="calendar-grid" id="weddingCalendar"></div><p class="calendar-note">♥ Chủ nhật, 27 tháng 12 · 08:00</p></div></section><section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p><div class="invite-actions"><button id="saveDate" type="button">📅 Lưu ngày cưới</button><button id="shareInvite" type="button">💌 Chia sẻ thiệp</button></div></section>
 <section style="background:#f8f0ed"><p class="eyebrow red">Our Memories</p><h2 class="script names red">Album ảnh cưới</h2><p>Những khoảnh khắc đáng nhớ của chúng mình</p><div class="gallery" id="gallery"><div class="photo" data-photo="gallery1"><div class="placeholder">Ảnh cưới 1</div></div><div class="photo" data-photo="gallery2"><div class="placeholder">Ảnh cưới 2</div></div><div class="photo" data-photo="gallery3"><div class="placeholder">Ảnh cưới 3</div></div><div class="photo" data-photo="gallery4"><div class="placeholder">Ảnh cưới 4</div></div><div class="photo" data-photo="gallery5"><div class="placeholder">Ảnh cưới 5</div></div></div></section>
-<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="quick-actions"><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
+<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="petals-layer" id="petalsLayer" aria-hidden="true"></div><div class="quick-actions"><button id="musicToggle" type="button" aria-label="Bật nhạc cưới" aria-pressed="false" title="Bật nhạc cưới">♫</button><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
 // Ảnh Google Drive cần đặt quyền "Bất kỳ ai có đường liên kết - Người xem".
@@ -143,5 +161,64 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
   document.documentElement.classList.add('reveal-ready');
   targets.forEach(el=>ob.observe(el));
  }
+})();
+
+/* Calendar: Monday-first December 2026, with December 27 highlighted. */
+(()=>{
+ const root=document.getElementById('weddingCalendar');
+ ['T2','T3','T4','T5','T6','T7','CN'].forEach(label=>{const cell=document.createElement('span');cell.className='calendar-weekday';cell.textContent=label;root.append(cell)});
+ const before=(new Date(2026,11,1).getDay()+6)%7;
+ for(let n=0;n<before;n++){const cell=document.createElement('span');cell.setAttribute('aria-hidden','true');root.append(cell)}
+ for(let n=1;n<=31;n++){const cell=document.createElement('span');cell.className='calendar-day'+(n===27?' wedding-day':'');cell.textContent=String(n);if(n===27){cell.setAttribute('aria-label','Ngày cưới, Chủ nhật 27 tháng 12 năm 2026');cell.setAttribute('title','Ngày cưới ♥')}root.append(cell)}
+})();
+/* Petals stay subtle and are disabled for reduced-motion or hidden tabs. */
+(()=>{
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const root=document.getElementById('petalsLayer');
+ for(let i=0;i<13;i++){const petal=document.createElement('span');petal.className='petal';petal.style.setProperty('--left',((i*31+13)%100)+'%');petal.style.setProperty('--duration',(10+(i*7)%9)+'s');petal.style.setProperty('--delay',(-(i*13)%18)+'s');petal.style.setProperty('--drift',((i%2?-1:1)*(24+(i*17)%68))+'px');root.append(petal)}
+ document.addEventListener('visibilitychange',()=>{root.style.display=document.hidden?'none':''});
+})();
+/* Original instrumental melody synthesized on demand; no copyrighted audio file required. */
+(()=>{
+ const btn=document.getElementById('musicToggle');
+ const Ctx=window.AudioContext||window.webkitAudioContext;
+ let context=null,master=null,loopTimer=null,isPlaying=false,nextStart=0;
+ const beat=.57,loopLength=16*beat;
+ // A gentle original melody, note frequencies in Hz.
+ const melody=[ [0,392],[1,440],[2,523.25],[3,440],[4,392],[5,329.63],[6,349.23],[7,392],[8,440],[9,523.25],[10,587.33],[11,523.25],[12,440],[13,392],[14,349.23],[15,329.63] ];
+ const chords=[[0,[261.63,329.63,392]],[4,[220,261.63,349.23]],[8,[261.63,349.23,440]],[12,[196,246.94,392]]];
+ function note(freq,start,duration,volume,type='sine'){
+  const osc=context.createOscillator(),gain=context.createGain();
+  osc.type=type;osc.frequency.setValueAtTime(freq,start);
+  gain.gain.setValueAtTime(0.0001,start);gain.gain.exponentialRampToValueAtTime(volume,start+.08);
+  gain.gain.exponentialRampToValueAtTime(.0001,start+duration);
+  osc.connect(gain);gain.connect(master);osc.start(start);osc.stop(start+duration+.03);
+ }
+ function schedule(){
+  if(!isPlaying)return;
+  let start=nextStart;
+  if(start<context.currentTime+.04)start=context.currentTime+.06;
+  melody.forEach(([index,freq])=>note(freq,start+index*beat,beat*.88,.13,'sine'));
+  chords.forEach(([index,frequencies])=>frequencies.forEach((f,j)=>note(f,start+index*beat,beat*3.9,.028,'triangle')));
+  nextStart=start+loopLength;
+ }
+ async function toggle(){
+  if(!Ctx){btn.title='Trình duyệt không hỗ trợ phát nhạc';return}
+  if(isPlaying){
+   isPlaying=false;clearInterval(loopTimer);loopTimer=null;
+   master.gain.setTargetAtTime(0,context.currentTime,.08);
+   btn.textContent='♫';btn.classList.remove('is-playing');btn.setAttribute('aria-label','Bật nhạc cưới');btn.setAttribute('aria-pressed','false');btn.title='Bật nhạc cưới';
+   return;
+  }
+  try{
+   if(!context){context=new Ctx();master=context.createGain();master.gain.value=0;master.connect(context.destination)}
+   await context.resume();master.gain.setTargetAtTime(.75,context.currentTime,.12);
+   isPlaying=true;nextStart=context.currentTime+.08;schedule();
+   loopTimer=setInterval(schedule,loopLength*1000);
+   btn.textContent='Ⅱ';btn.classList.add('is-playing');btn.setAttribute('aria-label','Tắt nhạc cưới');btn.setAttribute('aria-pressed','true');btn.title='Tắt nhạc cưới';
+  }catch(err){btn.title='Không thể phát nhạc trên trình duyệt này'}
+ }
+ btn.addEventListener('click',toggle);
+ document.addEventListener('visibilitychange',()=>{if(!context||!master||!isPlaying)return;master.gain.setTargetAtTime(document.hidden?0:.75,context.currentTime,.08)});
 })();
 </script></body></html>
