@@ -77,12 +77,44 @@
 .calendar-note{margin:13px auto 0;font-size:.85rem;color:var(--red);font-weight:600}
 @media(max-width:380px){.wedding-calendar{padding:17px 10px}.calendar-day{font-size:.78rem}.quick-actions{right:10px;bottom:11px}}
 @media(prefers-reduced-motion:reduce){.petals-layer{display:none}.petal{animation:none}}
+
+/* Wedding gift QR, self-contained and tested VietQR data */
+.wedding-gift{background:linear-gradient(160deg,#fffdf9 20%,#f9ebe6);padding-top:62px;padding-bottom:70px}
+.wedding-gift>p:not(.eyebrow){font-size:.9rem;line-height:1.8}
+.gift-card{margin:27px auto 0;padding:27px 18px 24px;max-width:380px;border:1px solid #d6aaa5;background:white;border-radius:20px;box-shadow:0 12px 35px #812d2c13}
+.gift-bank{font-weight:700;color:var(--red);font-size:1.16rem;margin:0}
+.gift-name{font-size:.85rem;letter-spacing:.05em;font-weight:600;margin:3px 0 14px}
+.gift-qr{width:min(100%,258px);margin:10px auto 0;padding:7px;border:1px solid #e9d9d6;border-radius:12px;background:white}
+.gift-qr svg{display:block;width:100%;height:auto;image-rendering:pixelated}
+.gift-account-label{margin:18px 0 2px;color:#796461;font-size:.79rem}
+.gift-account{font:700 1.38rem 'Be Vietnam Pro',sans-serif;letter-spacing:.06em;color:#432b2d;margin:0 0 14px}
+.gift-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.gift-actions button{cursor:pointer;border:1px solid var(--red);background:var(--red);color:white;border-radius:26px;padding:11px 15px;font:600 .78rem 'Be Vietnam Pro',sans-serif}
+.gift-actions button+button{background:white;color:var(--red)}
+.gift-actions button:focus-visible{outline:3px solid #e6a1a5;outline-offset:2px}
+.gift-tip{color:#806c6c;font-size:.72rem;line-height:1.6;margin:17px 0 0}
+@media(max-width:360px){.gift-actions{flex-direction:column}.gift-actions button{width:100%}}
 </style></head><body><div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="envelope-card"><p class="eyebrow red">Trân trọng kính mời</p><div class="divider">♥</div><h2 class="intro-names" id="introTitle">Thanh Tòng<br>♥<br>Thu An</h2><p class="intro-date">27 · 12 · 2026</p><button type="button" class="intro-open" id="openInvitation">💌 Mở thiệp cưới</button></div></div><main>
 <section class="hero"><p class="eyebrow">The Wedding Of</p><h1 class="script">Thanh Tòng</h1><div class="script and">♥</div><h1 class="script">Thu An</h1><div class="divider">❦</div><p>Trân trọng kính mời bạn đến chung vui</p><p class="date">27 · 12 · 2026</p><p class="small">Cuộn xuống để xem thiệp ↓</p></section>
 <section><p class="eyebrow red">Lễ Tân Hôn</p><div class="divider">♥</div><div class="parents"><div><p>Ông – Bà</p><strong>NGUYỄN VĂN SƠN<br>VÕ THỊ LỆ</strong><p>242 Ấp Thạnh Phong,<br>Xã Thạnh Hưng, An Giang</p></div><div><p>Ông – Bà</p><strong>PHAN VĂN TO<br>NGUYỄN THỊ HƯỜNG</strong><p>409 Ấp Phước Lộc,<br>Xã Thạnh Phú, Cần Thơ</p></div></div><p class="serif" style="margin-top:40px">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI</p><h2 class="script names red">Nguyễn Thanh Tòng</h2><p>TRƯỞNG NAM</p><div class="heart">♡</div><h2 class="script names red">Phan Thị Thu An</h2><p>ÚT NỮ</p><div class="photo cover-photo" data-photo="cover"><div class="placeholder">Ảnh cưới của Thanh Tòng & Thu An<br><small>Thêm đường dẫn ảnh vào phần cấu hình</small></div></div></section>
 <section class="red-panel"><div class="invitation"><p class="script invitation-names">Thanh Tòng <span aria-hidden="true">♥</span> Thu An</p><p>Trân trọng kính mời</p><h3 class="serif" style="font-size:1.6rem;margin:0">Quý Gia Đình</h3><p>Đến dự buổi tiệc chung vui cùng gia đình chúng tôi tại</p><h2 class="script">Tư Gia</h2><p>242 Ấp Thạnh Phong, Xã Thạnh Hưng,<br>Tỉnh An Giang</p><p class="eyebrow red">Chủ nhật</p><div class="date-large serif">27 / 12 / 2026</div><p><strong>Vào lúc 08:00</strong></p><p class="small">(Nhằm ngày 19 tháng 11 năm Bính Ngọ)</p><div class="divider">♥</div><p class="script" style="font-size:2.2rem;line-height:1.3">Sự hiện diện của Quý Gia Đình<br>là niềm vinh hạnh của chúng tôi!</p><p><strong>Chủ hôn: Nguyễn Văn Sơn</strong></p><p class="script" style="font-size:2rem">Kính mời!</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=242+Ap+Thanh+Phong+Xa+Thanh+Hung+An+Giang" target="_blank" rel="noopener">📍 Xem đường đi</a></div></section>
 <section><p class="eyebrow red">Lịch hẹn yêu thương</p><h2 class="script names red">Ngày mình về chung đôi</h2><div class="wedding-calendar" aria-label="Lịch tháng 12 năm 2026"><p class="calendar-title">Tháng 12 · 2026</p><div class="calendar-grid" id="weddingCalendar"></div><p class="calendar-note">♥ Chủ nhật, 27 tháng 12 · 08:00</p></div></section><section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p><div class="invite-actions"><button id="saveDate" type="button">📅 Lưu ngày cưới</button><button id="shareInvite" type="button">💌 Chia sẻ thiệp</button></div></section>
 <section style="background:#f8f0ed"><p class="eyebrow red">Our Memories</p><h2 class="script names red">Album ảnh cưới</h2><p>Những khoảnh khắc đáng nhớ của chúng mình</p><div class="gallery" id="gallery"><div class="photo" data-photo="gallery1"><div class="placeholder">Ảnh cưới 1</div></div><div class="photo" data-photo="gallery2"><div class="placeholder">Ảnh cưới 2</div></div><div class="photo" data-photo="gallery3"><div class="placeholder">Ảnh cưới 3</div></div><div class="photo" data-photo="gallery4"><div class="placeholder">Ảnh cưới 4</div></div><div class="photo" data-photo="gallery5"><div class="placeholder">Ảnh cưới 5</div></div></div></section>
+<section class="wedding-gift" id="weddingGift" aria-labelledby="giftTitle">
+  <p class="eyebrow red">Wedding Gift</p>
+  <h2 class="script names red" id="giftTitle">Hộp quà mừng cưới</h2>
+  <div class="divider">♥</div>
+  <p>Sự hiện diện của bạn là món quà quý giá nhất.<br>Nếu muốn gửi lời chúc từ xa, bạn có thể sử dụng mã QR bên dưới.</p>
+  <div class="gift-card">
+    <p class="gift-bank">VPBank · Chú rể</p>
+    <p class="gift-name">NGUYEN THANH TONG</p>
+    <div class="gift-qr" id="giftQr" role="img" aria-label="Mã VietQR VPBank chuyển khoản mừng cưới cho Nguyễn Thanh Tòng"></div>
+    <p class="gift-account-label">Số tài khoản</p>
+    <p class="gift-account" id="giftAccount">166025605</p>
+    <div class="gift-actions"><button type="button" id="copyGiftAccount">Sao chép số tài khoản</button><button type="button" id="downloadGiftQR">Lưu mã QR</button></div>
+    <p class="gift-tip">Không ấn định số tiền. Hãy kiểm tra đúng ngân hàng, tên người nhận trong ứng dụng ngân hàng trước khi xác nhận chuyển khoản.</p>
+  </div>
+</section>
 <footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="petals-layer" id="petalsLayer" aria-hidden="true"></div><div class="quick-actions"><button id="musicToggle" type="button" aria-label="Bật nhạc cưới" aria-pressed="false" title="Bật nhạc cưới">♫</button><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
@@ -220,5 +252,60 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
  }
  btn.addEventListener('click',toggle);
  document.addEventListener('visibilitychange',()=>{if(!context||!master||!isPlaying)return;master.gain.setTargetAtTime(document.hidden?0:.75,context.currentTime,.08)});
+})();
+
+/* Tested offline against QR decoder and CRC-16/CCITT-FALSE. Static VietQR, no amount. */
+(()=>{
+ const matrixHex='000000000000000000000000000000000000000000000000001fc463e597f0082fada41a0805d1c030157402e90b1d26ba01751f25215d00824422d120807f5555555fc00005a351400015424665612002d422555cd003573c7e455002434955459001744656d447004979f95d66002747df3d3cc0143a8b5b51000bf3870a5a40018c2962914802b7c212933003338a5a146c01064b3624ce00a5e6c2c5f3005972815537401206c4547e801f6e63c4c63001df2d738550045cd9e64d6800d4bb95561001ec644329b0005501d79657805b4670d38c801f475d2d742012ec08b55f40000a1fa508f007f3a16d2578020927a186240175c15153f100ba6465f451005d7dae25b740209ced003c801fda976d5b100000000000000000000000000000000000000000000000000000000';
+ const side=49;
+ const bits=BigInt('0x'+matrixHex).toString(2).padStart(side*side,'0');
+ const qr=document.getElementById('giftQr');
+ const ns='http://www.w3.org/2000/svg';
+ const svg=document.createElementNS(ns,'svg');
+ svg.setAttribute('viewBox','0 0 49 49');
+ svg.setAttribute('xmlns',ns);
+ svg.setAttribute('shape-rendering','crispEdges');
+ svg.setAttribute('aria-hidden','true');
+ let shapes='';
+ for(let y=0;y<side;y++){
+  let x=0;
+  while(x<side){
+   if(bits[y*side+x]==='0'){x++;continue}
+   let end=x+1;
+   while(end<side&&bits[y*side+end]==='1')end++;
+   shapes+='M'+x+' '+y+'h'+(end-x)+'v1h-'+(end-x)+'z';
+   x=end;
+  }
+ }
+ const bg=document.createElementNS(ns,'rect');bg.setAttribute('width','49');bg.setAttribute('height','49');bg.setAttribute('fill','#fff');svg.append(bg);
+ const path=document.createElementNS(ns,'path');path.setAttribute('d',shapes);path.setAttribute('fill','#151515');svg.append(path);
+ qr.append(svg);
+ const account='166025605';
+ document.getElementById('copyGiftAccount').addEventListener('click',async()=>{
+  try{
+   await navigator.clipboard.writeText(account);
+   alert('Đã sao chép số tài khoản VPBank');
+  }catch(err){
+   const el=document.createElement('textarea');el.value=account;document.body.append(el);el.select();const copied=document.execCommand('copy');el.remove();alert(copied?'Đã sao chép số tài khoản':'Hãy chọn và sao chép số tài khoản hiển thị');
+  }
+ });
+ document.getElementById('downloadGiftQR').addEventListener('click',()=>{
+  const xml=new XMLSerializer().serializeToString(svg);
+  const img=new Image();
+  const blob=new Blob([xml],{type:'image/svg+xml;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  img.onload=()=>{
+   const canvas=document.createElement('canvas');canvas.width=980;canvas.height=980;
+   const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;context.fillStyle='#fff';context.fillRect(0,0,980,980);context.drawImage(img,0,0,980,980);
+   URL.revokeObjectURL(url);
+   canvas.toBlob(file=>{
+    if(!file)return;
+    const href=URL.createObjectURL(file),a=document.createElement('a');
+    a.href=href;a.download='vietqr-mung-cuoi-thanh-tong.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
+   },'image/png');
+  };
+  img.onerror=()=>URL.revokeObjectURL(url);
+  img.src=url;
+ });
 })();
 </script></body></html>
