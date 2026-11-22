@@ -106,12 +106,31 @@
 .album-show-all:hover{background:#771c22}
 .album-show-all:focus-visible{outline:3px solid #edc0ae;outline-offset:3px}
 @media(max-width:420px){.full-album{gap:7px}.album-full-title{margin-top:40px}}
+
+/* Wedding photo book: only five photos are shown inline; all spread images live in a separate scrollable viewer. */
+.album-book-intro{font-size:.87rem;color:#876869;max-width:320px;margin:24px auto 6px}
+.album-book-open{background:var(--red);color:#fff;border:none;border-radius:999px;padding:15px 30px;font:700 .9rem 'Be Vietnam Pro',sans-serif;letter-spacing:.06em;cursor:pointer;box-shadow:0 8px 24px #92282b35}
+.album-book-open:focus-visible,.album-book-header button:focus-visible{outline:3px solid #e8b3a2;outline-offset:3px}
+.album-book-overlay{position:fixed;inset:0;z-index:2800;background:#fff9f4;display:none;flex-direction:column}
+.album-book-overlay.open{display:flex}
+.album-book-header{min-height:82px;flex:0 0 auto;padding:12px max(18px,env(safe-area-inset-right)) 12px max(18px,env(safe-area-inset-left));background:#86252b;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 3px 15px #2e0c123d}
+.album-book-header small{font-size:.58rem;letter-spacing:.18em;opacity:.8}
+.album-book-header h2{font:400 clamp(1.85rem,7vw,2.5rem) 'Great Vibes',cursive;line-height:1.1;margin:2px 0}
+.album-book-header button{border:1px solid #fff9;color:#fff;background:#ffffff19;border-radius:50%;min-width:43px;height:43px;font-size:30px;cursor:pointer}
+.album-book-scroll{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;flex:1;padding:10px 12px max(24px,env(safe-area-inset-bottom));scroll-behavior:smooth;text-align:center}
+.album-book-lead{color:#8b5960;font-size:.8rem;margin:16px 0 19px}
+.book-spread{max-width:950px;margin:0 auto 22px;background:#fff;padding:6px 6px 0;box-shadow:0 7px 25px #73252618;border:1px solid #eedfda;border-radius:5px}
+.book-spread img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#fff;aspect-ratio:6890/4823}
+.book-spread:first-of-type img{aspect-ratio:6201/4134}
+.book-spread figcaption{font-size:.7rem;color:#8b6768;padding:6px}
+.album-book-finish{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--red);margin:22px auto 40px}
+@media(max-width:440px){.album-book-header{min-height:72px}.book-spread{margin-bottom:14px;padding:3px 3px 0}.album-book-scroll{padding-left:5px;padding-right:5px}}
 </style></head><body><div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-labelledby="introTitle"><div class="envelope-card"><p class="eyebrow red">Trân trọng kính mời</p><div class="divider">♥</div><h2 class="intro-names" id="introTitle">Thanh Tòng<br>♥<br>Thu An</h2><p class="intro-date">27 · 12 · 2026</p><button type="button" class="intro-open" id="openInvitation">💌 Mở thiệp cưới</button></div></div><main>
 <section class="hero"><p class="eyebrow">The Wedding Of</p><h1 class="script">Thanh Tòng</h1><div class="script and">♥</div><h1 class="script">Thu An</h1><div class="divider">❦</div><p>Trân trọng kính mời bạn đến chung vui</p><p class="date">27 · 12 · 2026</p><p class="small">Cuộn xuống để xem thiệp ↓</p></section>
 <section><p class="eyebrow red">Lễ Tân Hôn</p><div class="divider">♥</div><div class="parents"><div><p>Ông – Bà</p><strong>NGUYỄN VĂN SƠN<br>VÕ THỊ LỆ</strong><p>242 Ấp Thạnh Phong,<br>Xã Thạnh Hưng, An Giang</p></div><div><p>Ông – Bà</p><strong>PHAN VĂN TO<br>NGUYỄN THỊ HƯỜNG</strong><p>409 Ấp Phước Lộc,<br>Xã Thạnh Phú, Cần Thơ</p></div></div><p class="serif" style="margin-top:40px">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN CỦA CON CHÚNG TÔI</p><h2 class="script names red">Nguyễn Thanh Tòng</h2><p>TRƯỞNG NAM</p><div class="heart">♡</div><h2 class="script names red">Phan Thị Thu An</h2><p>ÚT NỮ</p><div class="photo cover-photo" data-photo="cover"><div class="placeholder">Ảnh cưới của Thanh Tòng & Thu An<br><small>Thêm đường dẫn ảnh vào phần cấu hình</small></div></div></section>
 <section class="red-panel"><div class="invitation"><p class="script invitation-names">Thanh Tòng <span aria-hidden="true">♥</span> Thu An</p><p>Trân trọng kính mời</p><h3 class="serif" style="font-size:1.6rem;margin:0">Quý Gia Đình</h3><p>Đến dự buổi tiệc chung vui cùng gia đình chúng tôi tại</p><h2 class="script">Tư Gia</h2><p>242 Ấp Thạnh Phong, Xã Thạnh Hưng,<br>Tỉnh An Giang</p><p class="eyebrow red">Chủ nhật</p><div class="date-large serif">27 / 12 / 2026</div><p><strong>Vào lúc 08:00</strong></p><p class="small">(Nhằm ngày 19 tháng 11 năm Bính Ngọ)</p><div class="divider">♥</div><p class="script" style="font-size:2.2rem;line-height:1.3">Sự hiện diện của Quý Gia Đình<br>là niềm vinh hạnh của chúng tôi!</p><p><strong>Chủ hôn: Nguyễn Văn Sơn</strong></p><p class="script" style="font-size:2rem">Kính mời!</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=242+Ap+Thanh+Phong+Xa+Thanh+Hung+An+Giang" target="_blank" rel="noopener">📍 Xem đường đi</a></div></section>
 <section><p class="eyebrow red">Lịch hẹn yêu thương</p><h2 class="script names red">Ngày mình về chung đôi</h2><div class="wedding-calendar" aria-label="Lịch tháng 12 năm 2026"><p class="calendar-title">Tháng 12 · 2026</p><div class="calendar-grid" id="weddingCalendar"></div><p class="calendar-note">♥ Chủ nhật, 27 tháng 12 · 08:00</p></div></section><section><p class="eyebrow red">Save The Date</p><h2 class="script names red">Đếm ngược ngày chung đôi</h2><div class="countdown" aria-label="Đếm ngược ngày cưới"><div><strong id="days">--</strong><span>Ngày</span></div><div><strong id="hours">--</strong><span>Giờ</span></div><div><strong id="minutes">--</strong><span>Phút</span></div><div><strong id="seconds">--</strong><span>Giây</span></div></div><p>08:00 · Chủ nhật · 27 tháng 12 năm 2026</p><div class="invite-actions"><button id="saveDate" type="button">📅 Lưu ngày cưới</button><button id="shareInvite" type="button">💌 Chia sẻ thiệp</button></div></section>
-<section style="background:#f8f0ed"><p class="eyebrow red">Our Memories</p><h2 class="script names red">Album ảnh cưới</h2><p>Những khoảnh khắc đáng nhớ của chúng mình</p><div class="gallery" id="gallery"><div class="photo" data-photo="gallery1"><div class="placeholder">Ảnh cưới 1</div></div><div class="photo" data-photo="gallery2"><div class="placeholder">Ảnh cưới 2</div></div><div class="photo" data-photo="gallery3"><div class="placeholder">Ảnh cưới 3</div></div><div class="photo" data-photo="gallery4"><div class="placeholder">Ảnh cưới 4</div></div><div class="photo" data-photo="gallery5"><div class="placeholder">Ảnh cưới 5</div></div></div><h3 class="album-full-title serif">Album cưới của chúng mình</h3><p class="album-full-desc">30 khoảnh khắc đáng nhớ · Chạm vào ảnh để xem toàn màn hình</p><div class="gallery full-album" id="fullAlbum"><div class="photo" data-full-photo="01"><img src="images/album-full/photo-01.webp" alt="Ảnh cưới Thanh Tòng và Thu An 1" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="02"><img src="images/album-full/photo-02.webp" alt="Ảnh cưới Thanh Tòng và Thu An 2" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="03"><img src="images/album-full/photo-03.webp" alt="Ảnh cưới Thanh Tòng và Thu An 3" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="04"><img src="images/album-full/photo-04.webp" alt="Ảnh cưới Thanh Tòng và Thu An 4" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="05"><img src="images/album-full/photo-05.webp" alt="Ảnh cưới Thanh Tòng và Thu An 5" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="06"><img src="images/album-full/photo-06.webp" alt="Ảnh cưới Thanh Tòng và Thu An 6" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="07"><img src="images/album-full/photo-07.webp" alt="Ảnh cưới Thanh Tòng và Thu An 7" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="08"><img src="images/album-full/photo-08.webp" alt="Ảnh cưới Thanh Tòng và Thu An 8" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="09"><img src="images/album-full/photo-09.webp" alt="Ảnh cưới Thanh Tòng và Thu An 9" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="10"><img src="images/album-full/photo-10.webp" alt="Ảnh cưới Thanh Tòng và Thu An 10" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="11"><img src="images/album-full/photo-11.webp" alt="Ảnh cưới Thanh Tòng và Thu An 11" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="12"><img src="images/album-full/photo-12.webp" alt="Ảnh cưới Thanh Tòng và Thu An 12" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="13"><img src="images/album-full/photo-13.webp" alt="Ảnh cưới Thanh Tòng và Thu An 13" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="14"><img src="images/album-full/photo-14.webp" alt="Ảnh cưới Thanh Tòng và Thu An 14" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="15"><img src="images/album-full/photo-15.webp" alt="Ảnh cưới Thanh Tòng và Thu An 15" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="16"><img src="images/album-full/photo-16.webp" alt="Ảnh cưới Thanh Tòng và Thu An 16" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="17"><img src="images/album-full/photo-17.webp" alt="Ảnh cưới Thanh Tòng và Thu An 17" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="18"><img src="images/album-full/photo-18.webp" alt="Ảnh cưới Thanh Tòng và Thu An 18" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="19"><img src="images/album-full/photo-19.webp" alt="Ảnh cưới Thanh Tòng và Thu An 19" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="20"><img src="images/album-full/photo-20.webp" alt="Ảnh cưới Thanh Tòng và Thu An 20" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="21"><img src="images/album-full/photo-21.webp" alt="Ảnh cưới Thanh Tòng và Thu An 21" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="22"><img src="images/album-full/photo-22.webp" alt="Ảnh cưới Thanh Tòng và Thu An 22" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="23"><img src="images/album-full/photo-23.webp" alt="Ảnh cưới Thanh Tòng và Thu An 23" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="24"><img src="images/album-full/photo-24.webp" alt="Ảnh cưới Thanh Tòng và Thu An 24" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="25"><img src="images/album-full/photo-25.webp" alt="Ảnh cưới Thanh Tòng và Thu An 25" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="26"><img src="images/album-full/photo-26.webp" alt="Ảnh cưới Thanh Tòng và Thu An 26" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="27"><img src="images/album-full/photo-27.webp" alt="Ảnh cưới Thanh Tòng và Thu An 27" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="28"><img src="images/album-full/photo-28.webp" alt="Ảnh cưới Thanh Tòng và Thu An 28" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="29"><img src="images/album-full/photo-29.webp" alt="Ảnh cưới Thanh Tòng và Thu An 29" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div><div class="photo" data-full-photo="30"><img src="images/album-full/photo-30.webp" alt="Ảnh cưới Thanh Tòng và Thu An 30" loading="lazy" decoding="async" onerror="this.closest('.photo').style.display='none'"></div></div><button type="button" id="showAllAlbum" class="album-show-all" aria-controls="fullAlbum" aria-expanded="false">Xem tất cả 30 ảnh ♡</button></section>
+<section style="background:#f8f0ed"><p class="eyebrow red">Our Memories</p><h2 class="script names red">Album ảnh cưới</h2><p>Những khoảnh khắc đáng nhớ của chúng mình</p><div class="gallery" id="gallery"><div class="photo" data-photo="gallery1"><div class="placeholder">Ảnh cưới 1</div></div><div class="photo" data-photo="gallery2"><div class="placeholder">Ảnh cưới 2</div></div><div class="photo" data-photo="gallery3"><div class="placeholder">Ảnh cưới 3</div></div><div class="photo" data-photo="gallery4"><div class="placeholder">Ảnh cưới 4</div></div><div class="photo" data-photo="gallery5"><div class="placeholder">Ảnh cưới 5</div></div></div><p class="album-book-intro">Một cuốn album ghi lại hành trình yêu thương của chúng mình</p><button class="album-book-open" type="button" id="openAlbumBook" aria-haspopup="dialog">📖 CUỐN ALBUM</button></section>
 <section class="wedding-gift" id="weddingGift" aria-labelledby="giftTitle">
   <p class="eyebrow red">Wedding Gift</p>
   <h2 class="script names red" id="giftTitle">Hộp quà mừng cưới</h2>
@@ -127,7 +146,24 @@
     <p class="gift-tip">Không ấn định số tiền. Hãy kiểm tra đúng ngân hàng, tên người nhận trong ứng dụng ngân hàng trước khi xác nhận chuyển khoản.</p>
   </div>
 </section>
-<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="petals-layer" id="petalsLayer" aria-hidden="true"></div><div class="quick-actions"><button id="musicToggle" type="button" aria-label="Bật nhạc cưới" aria-pressed="false" title="Bật nhạc cưới">♫</button><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
+<footer><p>Cảm ơn bạn đã cùng chia sẻ niềm vui với chúng mình!</p><p class="script">Thanh Tòng ♥ Thu An</p><p>27.12.2026</p></footer></main><div class="album-book-overlay" id="albumBook" role="dialog" aria-modal="true" aria-labelledby="albumBookTitle" aria-hidden="true">
+ <header class="album-book-header"><div><small>THE WEDDING ALBUM</small><h2 id="albumBookTitle">Thanh Tòng ♥ Thu An</h2></div><button id="closeAlbumBook" type="button" aria-label="Đóng album">×</button></header>
+ <div class="album-book-scroll" id="albumBookScroll">
+  <p class="album-book-lead">Cuộn xuống để ngắm những khoảnh khắc của chúng mình ♡</p>
+  <figure class="book-spread"><img data-book-src="images/album-book/bia.webp" alt="Bìa album cưới" loading="lazy" decoding="async"><figcaption>Bìa album</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_001.webp" alt="Trang album cưới 1" loading="lazy" decoding="async"><figcaption>Trang 1 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_002.webp" alt="Trang album cưới 2" loading="lazy" decoding="async"><figcaption>Trang 2 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_003.webp" alt="Trang album cưới 3" loading="lazy" decoding="async"><figcaption>Trang 3 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_004.webp" alt="Trang album cưới 4" loading="lazy" decoding="async"><figcaption>Trang 4 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_005.webp" alt="Trang album cưới 5" loading="lazy" decoding="async"><figcaption>Trang 5 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_006.webp" alt="Trang album cưới 6" loading="lazy" decoding="async"><figcaption>Trang 6 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_007.webp" alt="Trang album cưới 7" loading="lazy" decoding="async"><figcaption>Trang 7 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_008.webp" alt="Trang album cưới 8" loading="lazy" decoding="async"><figcaption>Trang 8 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_009.webp" alt="Trang album cưới 9" loading="lazy" decoding="async"><figcaption>Trang 9 / 10</figcaption></figure>
+  <figure class="book-spread"><img data-book-src="images/album-book/spread_010.webp" alt="Trang album cưới 10" loading="lazy" decoding="async"><figcaption>Trang 10 / 10</figcaption></figure>
+  <p class="album-book-finish">Cảm ơn bạn đã cùng chúng mình lưu giữ những kỷ niệm này ♥</p>
+ </div>
+</div><div class="petals-layer" id="petalsLayer" aria-hidden="true"></div><div class="quick-actions"><button id="musicToggle" type="button" aria-label="Bật nhạc cưới" aria-pressed="false" title="Bật nhạc cưới">♫</button><button id="quickShare" type="button" aria-label="Chia sẻ thiệp cưới" title="Chia sẻ thiệp">↗</button><button id="backTop" type="button" aria-label="Về đầu trang" title="Về đầu trang">↑</button></div><div role="status" aria-live="polite" id="shareToast"></div>
 <script>
 // Dán link ảnh trực tiếp (https://...) hoặc link chia sẻ Google Drive vào các ô dưới đây.
 // Ảnh Google Drive cần đặt quyền "Bất kỳ ai có đường liên kết - Người xem".
@@ -145,7 +181,7 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
 
 /* Tap an album image to view it full screen; swipe to navigate on mobile. */
 (()=>{
- const nodes=[...document.querySelectorAll('#gallery .photo, #fullAlbum .photo')];
+ const nodes=[...document.querySelectorAll('#gallery .photo')];
  const viewer=document.createElement('div');
  viewer.className='album-lightbox';
  viewer.setAttribute('role','dialog');
@@ -321,15 +357,31 @@ function tick(){const t=new Date("2026-12-27T08:00:00+07:00").getTime()-Date.now
  });
 })();
 
-/* Show first six photos to keep the initial invitation short on phones. */
+
+/* Photo-book viewer: images are fetched only when the visitor opens the book. */
 (()=>{
- const button=document.getElementById('showAllAlbum');
- const album=document.getElementById('fullAlbum');
- button.addEventListener('click',()=>{
-  const expanded=album.classList.toggle('expanded');
-  button.textContent=expanded?'Thu gọn album ↑':'Xem tất cả 30 ảnh ♡';
-  button.setAttribute('aria-expanded',String(expanded));
-  if(!expanded){album.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
+ const overlay=document.getElementById('albumBook'),open=document.getElementById('openAlbumBook'),close=document.getElementById('closeAlbumBook'),scroll=document.getElementById('albumBookScroll');
+ let previousFocus=null,previousOverflow='';
+ function openBook(){
+  previousFocus=document.activeElement;previousOverflow=document.body.style.overflow;
+  overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';scroll.scrollTop=0;
+  overlay.querySelectorAll('img[data-book-src]').forEach(img=>{if(!img.src)img.src=img.dataset.bookSrc});
+  close.focus();
+ }
+ function closeBook(){
+  overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow=previousOverflow;
+  if(previousFocus?.focus)previousFocus.focus();
+ }
+ open.addEventListener('click',openBook);
+ close.addEventListener('click',closeBook);
+ overlay.addEventListener('keydown',event=>{
+  if(event.key==='Escape'){event.preventDefault();closeBook()}
+  if(event.key==='Tab'){
+   const focusable=[close];
+   if(event.shiftKey||document.activeElement===close){event.preventDefault();close.focus()}
+  }
  });
 })();
 </script></body></html>
